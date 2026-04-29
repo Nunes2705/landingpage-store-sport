@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StoRê Sport — Curadoria Premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF8F5;
+    --warm-white: #F5F2ED;
+    --stone: #E8E3DC;
+    --text-dark: #1C1A18;
+    --text-mid: #6B6460;
+    --text-light: #A09A95;
+    --accent: #C4593A;
+    --accent-soft: #E8C4B8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(250,248,245,0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--stone);
+    transition: all 0.3s;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dark);
+  }
+
+  .logo span { color: var(--accent); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--text-dark); }
+
+  .nav-icons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .nav-icon-btn {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+
+  .nav-ig { background: var(--stone); color: var(--text-dark); }
+  .nav-ig:hover { background: var(--accent); color: white; }
+  .nav-wa { background: var(--stone); color: var(--text-dark); }
+  .nav-wa:hover { background: #25D366; color: white; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 80px;
+  }
+
+  .hero-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 6vw, 84px);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--text-dark);
+    margin-bottom: 28px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.8;
+    max-width: 360px;
+    margin-bottom: 48px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--text-dark);
+    color: var(--cream);
+    padding: 14px 36px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.25s;
+    border: 1.5px solid var(--text-dark);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .btn-secondary {
+    color: var(--text-mid);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--text-dark); }
+  .btn-secondary i { font-size: 10px; }
+
+  .hero-note {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--stone);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--warm-white);
+  }
+
+  .hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hero-right:hover img { transform: scale(1.03); }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 40px;
+    left: -20px;
+    background: var(--cream);
+    padding: 20px 28px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    border-radius: 2px;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .hero-badge p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--text-mid);
+  }
+
+  .hero-badge strong {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--text-dark);
+    padding: 24px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  /* TECHNOLOGY */
+  .section-tech {
+    padding: 120px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: var(--warm-white);
+  }
+
+  .tech-image-wrap {
+    position: relative;
+  }
+
+  .tech-image-wrap img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 2px;
+    cursor: zoom-in;
+    transition: transform 0.4s ease;
+  }
+
+  .tech-image-wrap:hover img { transform: scale(1.01); }
+
+  .tech-tag-float {
+    position: absolute;
+    top: 32px;
+    right: -24px;
+    background: var(--accent);
+    color: white;
+    padding: 12px 20px;
+    writing-mode: vertical-rl;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    border-radius: 1px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 3.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  .section-body {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.9;
+    margin-bottom: 40px;
+  }
+
+  .tech-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .tech-feat {
+    padding: 20px;
+    background: var(--cream);
+    border: 1px solid var(--stone);
+    border-radius: 2px;
+    transition: border-color 0.2s;
+  }
+
+  .tech-feat:hover { border-color: var(--accent-soft); }
+
+  .tech-feat i {
+    color: var(--accent);
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .tech-feat h6 {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .tech-feat p {
+    font-size: 11px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* COLLECTION */
+  .section-collection {
+    padding: 100px 80px;
+    background: var(--cream);
+  }
+
+  .collection-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--stone);
+  }
+
+  .collection-header-hint {
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .category-section { margin-bottom: 80px; }
+
+  .category-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--stone);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .category-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--stone);
+  }
+
+  .products-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .products-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .product-card {
+    cursor: pointer;
+  }
+
+  .product-img-wrap {
+    position: relative;
+    overflow: hidden;
+    background: var(--warm-white);
+    margin-bottom: 16px;
+    border-radius: 2px;
+  }
+
+  .products-grid-3 .product-img-wrap { aspect-ratio: 3/4; }
+  .products-grid-2 .product-img-wrap { aspect-ratio: 3/4; }
+
+  .product-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center center;
+  }
+
+  .product-card:hover .product-img-wrap img { transform: scale(1.08); }
+
+  .product-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28,26,24,0);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    transition: background 0.3s;
+  }
+
+  .product-card:hover .product-overlay { background: rgba(28,26,24,0.12); }
+
+  .product-cta {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s;
+    background: var(--cream);
+    color: var(--text-dark);
+    border: none;
+    padding: 10px 20px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s, opacity 0.3s, transform 0.3s;
+  }
+
+  .product-card:hover .product-cta {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .product-cta:hover { background: var(--accent); color: white; }
+
+  .product-name {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-dark);
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .product-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .product-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .product-installment {
+    font-size: 10px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* FEEDBACK */
+  .section-feedback {
+    padding: 100px 80px;
+    background: var(--warm-white);
+  }
+
+  .feedback-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .feedback-left .section-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-mid);
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-mid);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--stone);
+  }
+
+  .contact-link:hover { color: var(--text-dark); }
+  .contact-link i { color: var(--accent); font-size: 14px; width: 20px; }
+
+  .feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .form-field input,
+  .form-field textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--stone);
+    padding: 10px 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: var(--accent);
+  }
+
+  .form-submit {
+    margin-top: 8px;
+    background: transparent;
+    border: 1.5px solid var(--text-dark);
+    color: var(--text-dark);
+    padding: 14px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+    align-self: flex-start;
+    border-radius: 1px;
+  }
+
+  .form-submit:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--text-dark);
+    padding: 56px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream);
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-link {
+    width: 38px; height: 38px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+
+  .footer-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  .footer-copy {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+  }
+
+  /* MODAL */
+  #img-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(28,26,24,0.96);
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  }
+
+  #img-modal.active { display: flex; }
+
+  .modal-img-wrap {
+    max-width: 80vw;
+    max-height: 90vh;
+    position: relative;
+  }
+
+  #modal-img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.2s ease;
+    transform-origin: center center;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: color 0.2s;
+  }
+
+  .modal-close:hover { color: white; }
+
+  /* REVEAL ANIMATION */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 18px 24px; }
+    nav ul { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 80px 24px 48px; }
+    .hero-right { height: 60vw; }
+    .stats-bar { padding: 20px 24px; flex-wrap: wrap; gap: 12px; }
+    .section-tech, .section-collection, .section-feedback { padding: 64px 24px; }
+    .section-tech { grid-template-columns: 1fr; }
+    .tech-tag-float { display: none; }
+    .collection-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .products-grid-3, .products-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .feedback-grid { grid-template-columns: 1fr; gap: 40px; }
+    footer { padding: 40px 24px; flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .products-grid-3 { grid-template-columns: 1fr 1fr; }
+    .hero-title { font-size: 44px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Sto<span>rê</span> Sport</div>
+  <ul>
+    <li><a href="#colecao">Coleção</a></li>
+    <li><a href="#tecnologia">Tecnologia</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <div class="nav-icons">
+    <a href="https://www.instagram.com/store.modasport/" target="_blank" class="nav-icon-btn nav-ig">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/5551996468027" target="_blank" class="nav-icon-btn nav-wa">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left reveal">
+    <p class="hero-tag">Coleção 2026</p>
+    <h1 class="hero-title">
+      Moda que<br>
+      veste com<br>
+      <em>intenção.</em>
+    </h1>
+    <p class="hero-subtitle">
+      Peças técnicas e casuais com tecnologia Rala Bela —
+      conforto real, estética cuidadosa, performance sem abrir mão do estilo.
+    </p>
+    <div class="hero-actions">
+      <a href="#colecao" class="btn-primary">Ver Coleção</a>
+      <a href="https://wa.me/5551996468027" target="_blank" class="btn-secondary">
+        Falar no WhatsApp <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    <p class="hero-note">Parcelamento em até 6× no cartão</p>
+  </div>
+  <div class="hero-right">
+    <img src="conjunto.jpeg" alt="Coleção StoRê Sport">
+    <div class="hero-badge">
+      <p>Tecnologia Rala Bela</p>
+      <strong>Fios Inteligentes</strong>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">6×</span>
+    <span class="stat-label">Parcelamento</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-num">UV</span>
+    <span class="stat-label">Proteção Solar</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-num">100%</span>
+    <span class="stat-label">Tecnologia Rala Bela</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <span class="stat-num">Porto</span>
+    <span class="stat-label">Alegre · RS</span>
+  </div>
+</div>
+
+<!-- TECNOLOGIA -->
+<section id="tecnologia" class="section-tech">
+  <div class="tech-image-wrap reveal">
+    <img src="conjunto.jpeg" alt="Tecnologia Rala Bela" onclick="openModal('conjunto.jpeg')">
+    <div class="tech-tag-float">DNA Têxtil</div>
+  </div>
+  <div class="reveal">
+    <p class="section-label">Inovação</p>
+    <h2 class="section-title">
+      DNA Têxtil<br>
+      <em>Rala Bela</em>
+    </h2>
+    <p class="section-body">
+      Fios inteligentes desenvolvidos para garantir durabilidade, compressão ideal e
+      conforto térmico em qualquer situação — do treino ao cotidiano.
+    </p>
+    <div class="tech-features">
+      <div class="tech-feat">
+        <i class="fas fa-wind"></i>
+        <h6>Respirável</h6>
+        <p>Circulação de ar constante</p>
+      </div>
+      <div class="tech-feat">
+        <i class="fas fa-shield-alt"></i>
+        <h6>UV Protection</h6>
+        <p>Proteção solar integrada</p>
+      </div>
+      <div class="tech-feat">
+        <i class="fas fa-temperature-low"></i>
+        <h6>Térmico</h6>
+        <p>Equilíbrio de temperatura</p>
+      </div>
+      <div class="tech-feat">
+        <i class="fas fa-expand-arrows-alt"></i>
+        <h6>Compressão</h6>
+        <p>Suporte muscular ideal</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLEÇÃO -->
+<section id="colecao" class="section-collection">
+  <div class="collection-header reveal">
+    <div>
+      <p class="section-label">Catálogo</p>
+      <h2 class="section-title">Drop Premium <em>2026</em></h2>
+    </div>
+    <p class="collection-header-hint">
+      <i class="fas fa-hand-pointer" style="font-size:10px; color:var(--accent)"></i>
+      Clique para ampliar
+    </p>
+  </div>
+
+  <!-- Blusas -->
+  <div class="category-section reveal">
+    <p class="category-label">Blusas &amp; T-Shirts</p>
+    <div class="products-grid-3">
+      <div class="product-card" onclick="openModal('blusa-modal.jpg')">
+        <div class="product-img-wrap">
+          <img src="blusa-modal.jpg" alt="Blusa Modal">
+          <div class="product-overlay">
+            <span class="product-cta">Ampliar</span>
+          </div>
+        </div>
+        <div class="product-meta">
+          <span class="product-name">Blusa Modal</span>
+          <span class="product-price">R$ 198</span>
+        </div>
+        <p class="product-installment">6× de R$ 33,00</p>
+      </div>
+      <div class="product-card" onclick="openModal('t-shirt-ultracool.jpg')">
+        <div class="product-img-wrap">
+          <img src="t-shirt-ultracool.jpg" alt="T-Shirt Ultracool">
+          <div class="product-overlay">
+            <span class="product-cta">Ampliar</span>
+          </div>
+        </div>
+        <div class="product-meta">
+          <span class="product-name">T-Shirt Ultracool</span>
+          <span class="product-price">R$ 189,90</span>
+        </div>
+        <p class="product-installment">6× de R$ 31,65</p>
+      </div>
+      <div class="product-card" onclick="openModal('blusa-termica.jpg')">
+        <div class="product-img-wrap">
+          <img src="blusa-termica.jpg" alt="Blusa Térmica">
+          <div class="product-overlay">
+            <span class="product-cta">Ampliar</span>
+          </div>
+        </div>
+        <div class="product-meta">
+          <span class="product-name">Blusa Térmica</span>
+          <span class="product-price">R$ 167</span>
+        </div>
+        <p class="product-installment">6× de R$ 27,83</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jaquetas -->
+  <div class="category-section reveal">
+    <p class="category-label">Jaquetas &amp; Parkas</p>
+    <div class="products-grid-2">
+      <div class="product-card" onclick="openModal('jaqueta-fly.jpg')">
+        <div class="product-img-wrap">
+          <img src="jaqueta-fly.jpg" alt="Jaqueta Fly">
+          <div class="product-overlay">
+            <span class="product-cta">Ampliar</span>
+          </div>
+        </div>
+        <div class="product-meta">
+          <span class="product-name">Jaqueta Fly</span>
+          <span class="product-price">R$ 342</span>
+        </div>
+        <p class="product-installment">6× de R$ 57,00</p>
+      </div>
+      <div class="product-card" onclick="openModal('parka-impermeavel.jpg')">
+        <div class="product-img-wrap">
+          <img src="parka-impermeavel.jpg" alt="Parka Impermeável">
+          <div class="product-overlay">
+            <span class="product-cta">Ampliar</span>
+          </div>
+        </div>
+        <div class="product-meta">
+          <span class="product-name">Parka Impermeável</span>
+          <span class="product-price">R$ 459</span>
+        </div>
+        <p class="product-installment">6× de R$ 76,50</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leggings -->
+  <div class="category-section reveal">
+    <p class="category-label">Leggings &amp; Jogging</p>
+    <div class="products-grid-3">
+      <div class="product-card" onclick="openModal('legging-neo-fit.jpg')">
+        <div class="product-img-wrap">
+          <img src="legging-neo-fit.jpg" alt="Legging Neo Fit">
+          <div class="product-overlay">
+            <span class="product-cta">Ampliar</span>
+          </div>
+        </div>
+        <div class="product-meta">
+          <span class="product-name">Legging Neo Fit</span>
+          <span class="product-price">R$ 294,90</span>
+        </div>
+        <p class="product-installment">6× de R$ 49,15</p>
+      </div>
+      <div class="product-card" onclick="openModal('legging-nz.jpg')">
+        <div class="product-img-wrap">
+          <img src="legging-nz.jpg" alt="Legging NZ">
+          <div class="product-overlay">
+            <span class="product-cta">Ampliar</span>
+          </div>
+        </div>
+        <div class="product-meta">
+          <span class="product-name">Legging NZ</span>
+          <span class="product-price">R$ 278</span>
+        </div>
+        <p class="product-installment">6× de R$ 46,33</p>
+      </div>
+      <div class="product-card" onclick="openModal('jogging-essence.jpg')">
+        <div class="product-img-wrap">
+          <img src="jogging-essence.jpg" alt="Jogging Essence">
+          <div class="product-overlay">
+            <span class="product-cta">Ampliar</span>
+          </div>
+        </div>
+        <div class="product-meta">
+          <span class="product-name">Jogging Essence</span>
+          <span class="product-price">R$ 289</span>
+        </div>
+        <p class="product-installment">6× de R$ 48,17</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO / FEEDBACK -->
+<section id="contato" class="section-feedback">
+  <div class="feedback-grid">
+    <div class="reveal">
+      <p class="section-label">Contato</p>
+      <h2 class="section-title">Fale com<br><em>a gente</em></h2>
+      <p class="section-body">
+        Dúvidas sobre tamanhos, disponibilidade ou entrega?
+        Estamos no WhatsApp e Instagram para te atender.
+      </p>
+      <div class="contact-links">
+        <a href="https://wa.me/5551996468027" target="_blank" class="contact-link">
+          <i class="fab fa-whatsapp"></i>
+          (51) 99646-8027
+        </a>
+        <a href="https://www.instagram.com/store.modasport/" target="_blank" class="contact-link">
+          <i class="fab fa-instagram"></i>
+          @store.modasport
+        </a>
+      </div>
+    </div>
+    <div class="reveal">
+      <form class="feedback-form" action="https://formsubmit.co/remodinhavirtual@gmail.com" method="POST">
+        <div class="form-field">
+          <label>Seu nome</label>
+          <input type="text" name="nome" placeholder="Nome completo" required>
+        </div>
+        <div class="form-field">
+          <label>E-mail</label>
+          <input type="email" name="email" placeholder="seu@email.com" required>
+        </div>
+        <div class="form-field">
+          <label>Mensagem</label>
+          <textarea name="mensagem" rows="4" placeholder="Avaliação, dúvida ou sugestão..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Enviar →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Sto<span>rê</span> Sport</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/store.modasport/" target="_blank" class="footer-link">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/5551996468027" target="_blank" class="footer-link">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+  <p class="footer-copy">© 2026 StoRê Sport — Curadoria Premium</p>
+</footer>
+
+<!-- MODAL -->
+<div id="img-modal" onclick="closeModal()">
+  <div class="modal-img-wrap">
+    <button class="modal-close" onclick="closeModal()">Fechar ×</button>
+    <img id="modal-img" src="" alt="" onmousemove="modalZoom(event)" onmouseleave="resetZoom()">
+  </div>
+</div>
+
+<script>
+  // Modal
+  function openModal(src) {
+    document.getElementById('modal-img').src = src;
+    document.getElementById('img-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('img-modal').classList.remove('active');
+    document.body.style.overflow = '';
+    resetZoom();
+  }
+
+  function modalZoom(e) {
+    const img = document.getElementById('modal-img');
+    const rect = img.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    img.style.transformOrigin = `${x}% ${y}%`;
+    img.style.transform = 'scale(2.2)';
+  }
+
+  function resetZoom() {
+    const img = document.getElementById('modal-img');
+    img.style.transform = 'scale(1)';
+    img.style.transformOrigin = 'center center';
+  }
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.06)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+</body>
+</html>
